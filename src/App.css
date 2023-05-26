@@ -27,6 +27,7 @@ input {
 
 /* navbar */
 .nav-bar {
+  position: fixed;
   padding: 10px 30px;
   display: flex;
   align-items: center;
@@ -34,6 +35,8 @@ input {
   background-color: #4c768d;
   color: #242443;
   height: 60px;
+  top: 0;
+  width: 100%
 }
 .sign-in {
   border: none;
@@ -43,6 +46,21 @@ input {
   height: 30px;
   width: auto;
 }
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.user_avatar{
+  border-radius: 50%;
+  position: absolute;
+  height: 45px;
+  top: 5px;
+  right: 100px;
+
+}
+
 .sign-out {
   padding: 5px 10px;
   border-radius: 5px;
@@ -50,6 +68,29 @@ input {
   border: 1px solid #1c2c4c;
   background-color: #1c2c4c;
   font-weight: 600;
+  position: absolute;
+  top: 15px;
+  right: 10px;
+}
+
+/* calendar */
+.view_calendar{
+  border: none;
+  background-color: white;
+  position: absolute; 
+  top: 0 px;
+  right: 200px;
+}
+
+.view_calendar > img{
+  height: 50px;
+  width: auto;
+}
+
+.calendarWidget{
+  position: absolute;
+  right: 50px;
+  top: 50px;
 }
 
 /* welcome page */

@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import { auth, db } from "../firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import scroll from "./ChatBox.js";
 
-const SendMessage = ({ scroll }) => {
+
+const SendMessage = () => {
   const [message, setMessage] = useState("");
 
   const sendMessage = async (event) => {
@@ -21,9 +23,11 @@ const SendMessage = ({ scroll }) => {
     });
     setMessage("");
     scroll.current.scrollIntoView({ behavior: "smooth" });
+
   };
+
   return (
-    <form onSubmit={(event) => sendMessage(event)} className="send-message">
+    <form onSubmit={sendMessage} className="send-message">
       <label htmlFor="messageInput" hidden>
         Enter Message
       </label>
@@ -38,7 +42,7 @@ const SendMessage = ({ scroll }) => {
       />
       <button type="submit">Send</button>
     </form>
+    
   );
 };
-
 export default SendMessage;
