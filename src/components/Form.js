@@ -3,24 +3,16 @@ import "../App.css";
 import { auth, db } from "../firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 
-const Form = ({ onClose }) => {
+const Form = ({ onClose, onSubmit }) => {
   const [departLocation, setDepartLocation] = useState("");
   const [arriveLocation, setArriveLocation] = useState("");
   const [message, setMessage] = useState("");
-  const [isVisible, setIsVisible] = useState(true);
-
-  const handleClose = () => {
-    setIsVisible(false);
-    if (onClose) {
-      onClose(); // Trigger the onClose callback to handle form closing
-    }
-  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     alert("Submitting the form");
 
-    const { uid } = auth.currentUser;
+    const { uid, displayName, photoURL } = auth.currentUser;
 
     await addDoc(collection(db, "ride_forms"), {
       departLocation: departLocation,
@@ -28,17 +20,28 @@ const Form = ({ onClose }) => {
       message: message,
       createdAt: serverTimestamp(),
       uid,
+      name: displayName,
+      avatar: photoURL,
     });
 
     setDepartLocation("");
     setArriveLocation("");
     setMessage("");
-    setIsVisible(false);
+
+    if (onSubmit) {
+      onSubmit(); // Trigger the onSubmit callback to handle form submission
+    }
+
+    if (onClose) {
+      onClose(); // Trigger the onClose callback to handle form closing
+    }
   };
 
-  if (!isVisible) {
-    return null;
-  }
+  const handleClose = () => {
+    if (onClose) {
+      onClose(); // Trigger the onClose callback to handle form closing
+    }
+  };
 
   return (
     <div className="popup">

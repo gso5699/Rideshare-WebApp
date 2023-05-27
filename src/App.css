@@ -163,7 +163,9 @@ input {
 .send-message {
   position: fixed;
   bottom: 0px;
-  width: 100%;
+  min-width: 75%;
+  right: 0px;
+  left: 100;
   padding: 20px 30px;
   background-color: #4c768d;
   display: flex;
@@ -174,7 +176,7 @@ input {
 .send-message > input {
   position: relative;
   height: 40px;
-  min-width: 75%;
+  min-width: 100%;
   padding: 10px 10px;
   border-radius: 5px;
   border: none;
@@ -197,7 +199,32 @@ input {
   font-weight: 600;
   margin-left: 10px;
 }
+
 /*form popup*/
+
+.create-form {
+  position: fixed;
+  bottom: 0px;
+  width: 30%;
+  min-width: 200px;
+  padding: 20px 30px;
+  background-color: #4c768d;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.create-form > button {
+  height: 40px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #242443;
+  border: 1px solid #7cc5d9;
+  background-color: #7cc5d9;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
 .popup {
   position: fixed;
   padding: 50px;
