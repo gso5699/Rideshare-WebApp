@@ -1,4 +1,4 @@
-# Building a Real-time Chat App with ReactJs and Firebase.
+# Building a Webapp to Facilitate Student Ride-sharing: Real-time Chat App with ReactJs and Firebase.
 
 This project was inspired by an article written by FreeCodeCamp(https://www.freecodecamp.org/news/building-a-real-time-chat-app-with-reactjs-and-firebase/). The code provided was cloned and edited to suit the purpose of this project.
 
