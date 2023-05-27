@@ -6,7 +6,9 @@ This project was inspired by an article written by FreeCodeCamp(https://www.free
 
 This project aims to make the process of coordinating rideshares easier for university students. 
 By providing a live-chat platform and an integrated Google Calendar, users can easily plan their commutes. 
-<img width="851" alt="image" src="https://github.com/gso5699/Rideshare-Webapp/assets/84787354/9bfb61c0-3df4-48b4-96ba-d4accec1d2a6">
+
+<img width="866" alt="image" src="https://github.com/gso5699/Rideshare-Webapp/assets/84787354/c42b5f76-ba38-4adc-9c4a-c580f5887be5">
+
 
 
 ## Next Steps:
