@@ -38,23 +38,6 @@ const ChatBox = () => {
     setIsFormOpen(false);
   };
 
-  const submitForm = async (formData) => {
-    // Save the form data to the database
-    try {
-      const { uid, displayName, photoURL } = auth.currentUser;
-
-      await addDoc(collection(db, "ride_forms"), {
-        ...formData,
-        createdAt: serverTimestamp(),
-        uid,
-        name: displayName,
-        avatar: photoURL,
-      });
-    } catch (error) {
-      console.error("Error submitting form:", error);
-    }
-  };
-
   return (
     <main className="chat-box">
       <div className="messages-wrapper">
@@ -64,7 +47,7 @@ const ChatBox = () => {
       </div>
       <span ref={scroll}></span>
       <SendForm openForm={openForm} />
-      {isFormOpen && <Form onClose={closeForm} onSubmit={submitForm} />}
+      {isFormOpen && <Form onClose={closeForm} />}
      
       <SendMessage scroll={scroll}/>
 
