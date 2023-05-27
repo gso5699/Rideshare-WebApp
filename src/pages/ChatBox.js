@@ -9,19 +9,14 @@ import {
 import { db } from "../firebase";
 import Message from "../components/Message";
 import SendMessage from "../components/SendMessage";
-
+import Form from "../components/Form"
 
 const ChatBox = () => {
   const [messages, setMessages] = useState([]);
-
   const scroll = useRef();
 
   useEffect(() => {
-    const q = query(
-      collection(db, "messages"),
-      orderBy("createdAt"),
-      limit(50)
-    );
+    const q = query(collection(db, "messages"), orderBy("createdAt"), limit(50));
     const unsubscribe = onSnapshot(q, (QuerySnapshot) => {
       let messages = [];
       QuerySnapshot.forEach((doc) => {
@@ -29,7 +24,7 @@ const ChatBox = () => {
       });
       setMessages(messages);
     });
-    return () => unsubscribe;
+    return () => unsubscribe();
   }, []);
 
   return (
@@ -40,8 +35,10 @@ const ChatBox = () => {
         ))}
       </div>
       <span ref={scroll}></span>
-      <SendMessage scroll={scroll} />
+        <SendMessage scroll={scroll} />
+        <Form/>
     </main>
   );
 };
+
 export default ChatBox;
