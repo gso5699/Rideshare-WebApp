@@ -95,19 +95,31 @@ input {
 
 /* welcome page */
 .welcome {
-  padding: 30px;
+  padding: 150px;
+  background-color: #1c2c4c;
   text-align: center;
   margin-top: 40px;
   color: #7cc5d9;
+  height: 100vh;
 }
 .welcome :is(h2, p, img) {
   margin-bottom: 20px;
+}
+
+/*calendar page*/
+.calendariFrame iframe{
+  position: absolute;
+  top: 90px;
+  left: 5%;
+  width: 90%;
+  height: 80%;
 }
 
 /* chat component */
 .messages-wrapper {
   padding: 30px;
   margin-bottom: 60px;
+  background-color: #1c2c4c;
 }
 .chat-bubble {
   border-radius: 20px 20px 20px 0;

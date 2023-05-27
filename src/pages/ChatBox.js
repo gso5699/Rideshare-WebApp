@@ -7,8 +7,8 @@ import {
   limit,
 } from "firebase/firestore";
 import { db } from "../firebase";
-import Message from "./Message";
-import SendMessage from "./SendMessage";
+import Message from "../components/Message";
+import SendMessage from "../components/SendMessage";
 
 
 const ChatBox = () => {

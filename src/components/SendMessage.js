@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { auth, db } from "../firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import scroll from "./ChatBox.js";
+import scroll from "../pages/ChatBox.js";
 
 
 const SendMessage = () => {

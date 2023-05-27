@@ -3,23 +3,31 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import "./App.css";
 
 import NavBar from "./components/NavBar";
-import ChatBox from "./components/ChatBox";
-import Welcome from "./components/Welcome";
+import ChatBox from "./pages/ChatBox";
+import Welcome from "./pages/Welcome";
+
+import Calendar from './pages/Calendar';
+
+
+
+import { BrowserRouter as Router, Routes, Route, Navigate }
+    from 'react-router-dom';
+
 
 function App() {
   const [user] = useAuthState(auth);
 
   return (
-    <div className="App">
+
+    <Router>
       <NavBar />
-      {!user ? (
-        <Welcome />
-      ) : (
-        <>
-          <ChatBox />
-        </>
-      )}
-    </div>
+      <Routes>
+        <Route exact path='/welcome' element={user ? <Navigate to="/" replace /> : <Welcome />} />
+        <Route path='/calendar' element={user ? <Calendar /> : <Welcome />} />
+        <Route path='/' element={user ? <ChatBox /> : <Welcome />} />
+      </Routes>
+    </Router>
+    
   );
 }
 

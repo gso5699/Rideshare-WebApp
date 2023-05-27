@@ -5,6 +5,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 import React, { useState } from "react";
 
+import { Nav, NavLink, NavMenu }
+    from "./NavbarElements";
 import Calendar from "./Calendar";
 
 
@@ -28,9 +30,62 @@ const NavBar = () => {
   }
     
   return (
-    <nav className="nav-bar">
-      <h1>Rideshare Chat</h1>
-      <button className="view_calendar">
+    <>
+    
+    <Nav>
+        <NavMenu>
+           <NavLink to="/welcome" activeStyle>
+              Home
+            </NavLink>
+            <NavLink to="/calendar" activeStyle>
+                Calendar
+            </NavLink>
+
+        </NavMenu>
+
+      
+      {user ? (
+        <button className="view_calendar">
+        <img
+          onClick={viewCalendar}
+          src={calendarIcon}
+          alt="View Calendar"
+          type="button"
+        />
+      </button>
+      ) : (null)}
+        
+      {showCalendar && <Calendar />}
+      {user ? (
+        <div>
+          <img src={user.photoURL} alt="user avatar" className="user_avatar"></img>
+          <button onClick={signOut} className="sign-out" type="button">
+          Sign Out
+          </button>
+        </div>
+      ) : (
+        
+        <button className="sign-in">
+          <img
+            onClick={googleSignIn}
+            src={GoogleSignin}
+            alt="sign in with google"
+            type="button"
+          />
+        </button>
+      )}
+    </Nav>
+
+    
+</>
+
+  );
+};
+
+export default NavBar;
+
+/*
+<button className="view_calendar">
         <img
           onClick={viewCalendar}
           src={calendarIcon}
@@ -57,8 +112,5 @@ const NavBar = () => {
           />
         </button>
       )}
-    </nav>
-  );
-};
 
-export default NavBar;
+      */
