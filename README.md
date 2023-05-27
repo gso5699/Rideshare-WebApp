@@ -11,4 +11,4 @@ By providing a live-chat platform and an integrated Google Calendar, users can e
 
 - [ ] Connect database entries to Google Calendar API. This is so that ride requests and offers show up on the calendar at specified dates/times.
 - [ ] Fix the input format of the Rideshare form. Include dropdown select options for location and time. Include option to specify whether user filling the for is looking for a ride or offering a ride.
-- [ ] Use AI/ML algoriths to predict when popular ride hours.
+- [ ] Use AI/ML algoriths to predict popular ride hours.
