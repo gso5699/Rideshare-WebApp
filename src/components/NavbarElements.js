@@ -8,23 +8,41 @@ export const Nav = styled.nav`
   align-items: center;
   justify-content: space-between;
   background-color: #4c768d;
-  color: #242443;
   height: 60px;
   top: 0;
   width: 100%
 `;
  
 export const NavLink = styled(Link)`
-  color: #fffff;
+  color: #ffffff;
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: 0 1rem;
+  padding: 8px 16px;
   height: 100%;
   cursor: pointer;
   &.active {
     color: #ADD8E6;
   }
+  border: 2px solid rgb(206, 233, 233); /* Add border properties */
+  border-radius: 5px; /* Add border-radius to round the corners */
+  color: rgb(206, 233, 233);
+  transition: background-color 0.3s ease-in-out;
+
+  & + & {
+    margin-left: 10px; /* Adjust the margin as needed */
+  }
+
+  &:hover {
+    background-color: rgb(206, 233, 233);
+    color: #4c768d;
+  }
+
+  &.active {
+    background-color: rgb(206, 233, 233);
+    color: #4c768d;
+  }
+
 `;
  
 export const NavMenu = styled.div`

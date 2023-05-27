@@ -34,8 +34,8 @@ const NavBar = () => {
     
     <Nav>
         <NavMenu>
-           <NavLink to="/welcome" activeStyle>
-              Home
+           <NavLink to="/" activeStyle>
+              Chat
             </NavLink>
             <NavLink to="/calendar" activeStyle>
                 Calendar
@@ -83,34 +83,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
-/*
-<button className="view_calendar">
-        <img
-          onClick={viewCalendar}
-          src={calendarIcon}
-          alt="View Calendar"
-          type="button"
-        />
-      </button>
-      {showCalendar && <Calendar />}
-      {user ? (
-        <div>
-          <img src={user.photoURL} alt="user avatar" className="user_avatar"></img>
-          <button onClick={signOut} className="sign-out" type="button">
-          Sign Out
-          </button>
-        </div>
-      ) : (
-        
-        <button className="sign-in">
-          <img
-            onClick={googleSignIn}
-            src={GoogleSignin}
-            alt="sign in with google"
-            type="button"
-          />
-        </button>
-      )}
-
-      */

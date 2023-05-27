@@ -194,8 +194,8 @@ input {
   padding: 5px 10px;
   border-radius: 5px;
   color: #242443;
-  border: 1px solid #7cc5d9;
-  background-color: #7cc5d9;
+  border: 1px solid rgb(206, 233, 233);
+  background-color: rgb(206, 233, 233);
   font-weight: 600;
   margin-left: 10px;
 }
@@ -219,8 +219,8 @@ input {
   padding: 5px 10px;
   border-radius: 5px;
   color: #242443;
-  border: 1px solid #7cc5d9;
-  background-color: #7cc5d9;
+  border: 1px solid rgb(206, 233, 233);
+  background-color: rgb(206, 233, 233);
   font-weight: 600;
   margin-right: 10px;
 }
@@ -230,6 +230,7 @@ input {
   top:70px;
   left: 25%;
   right: 25%;
+  border-radius: 9px;
   min-width: 400px;
   bottom: 100px;
   display: flex;
@@ -271,7 +272,7 @@ textarea {
   border: 1px solid lightgray;
   /* border: none; */
   background: #fff;
-  font-size: 12px;
+  font-size: 15px;
   color: rgb(0, 0, 32);
   outline: none;
 }
